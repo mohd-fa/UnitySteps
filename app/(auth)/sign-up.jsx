@@ -1,18 +1,75 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { Input, Button } from "@rneui/themed";
 import { router } from "expo-router";
+import { AppState } from "react-native";
+import { supabase } from "@/lib/supabase";
+
+// Tells Supabase Auth to continuously refresh the session automatically if
+// the app is in the foreground. When this is added, you will continue to receive
+// `onAuthStateChange` events with the `TOKEN_REFRESHED` or `SIGNED_OUT` event
+// if the user's session is terminated. This should only be registered once.
+AppState.addEventListener("change", (state) => {
+  if (state === "active") {
+    supabase.auth.startAutoRefresh();
+  } else {
+    supabase.auth.stopAutoRefresh();
+  }
+});
 
 const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function signUpWithEmail() {
+    setLoading(true);
+    if (name.length <= 4) {
+      Alert.alert("Name must be at least 5 characters long.");
+      setLoading(false);
+      return;
+    }
+
+    if (email.length <= 6) {
+      Alert.alert("Email must be at least 7 characters long.");
+      setLoading(false);
+      return;
+    }
+
+    if (password.length <= 4) {
+      Alert.alert("Password Length should be greater than 4");
+      setLoading(false);
+      return;
+    }
+    if (password !== confirmPassword) {
+      Alert.alert("Password and confirm password doesn't match!");
+      setLoading(false);
+      return;
+    }
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.signUp({
+      email: email,
+      password: password,
+    });
+
+    if (error) Alert.alert(error.message);
+    if (!session) {
+      Alert.alert("Please check your inbox for email verification!");
+      setLoading(false);
+      return;
+    }
+    router.replace("/home");
+    setLoading(false);
+  }
 
   return (
     <View style={styles.container}>
       {/* Back Button */}
-      <TouchableOpacity style={styles.backButton}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
         <View style={styles.circle}>
           <Text style={styles.backArrow}>←</Text>
         </View>
@@ -34,14 +91,18 @@ const RegisterScreen = () => {
         />
         <Input
           placeholder="Email"
+          keyboardType="email-address"
           leftIcon={{ type: "font-awesome", name: "envelope" }}
           value={email}
+          autoCapitalize="none"
           onChangeText={(text) => setEmail(text)}
           containerStyle={styles.input}
           inputContainerStyle={styles.inputOutlined}
         />
         <Input
           placeholder="Password"
+          autoCapitalize="none"
+          secureTextEntry={true}
           leftIcon={{ type: "font-awesome", name: "lock" }}
           value={password}
           onChangeText={(text) => setPassword(text)}
@@ -51,6 +112,8 @@ const RegisterScreen = () => {
         <Input
           placeholder="Confirm Password"
           leftIcon={{ type: "font-awesome", name: "lock" }}
+          autoCapitalize="none"
+          secureTextEntry={true}
           value={confirmPassword}
           onChangeText={(text) => setConfirmPassword(text)}
           containerStyle={styles.input}
@@ -59,17 +122,18 @@ const RegisterScreen = () => {
       </View>
 
       <Button
+        disabled={loading}
         className="fg-primary"
         title="Register"
         buttonStyle={styles.registerButton}
         titleStyle={styles.registerButtonText}
-        onPress={() => console.log("Register pressed!")}
+        onPress={() => signUpWithEmail()}
       />
 
       {/* Sign-In Link */}
       <TouchableOpacity
         style={styles.footer}
-        onPress={() => router.push("./sign-in")}
+        onPress={() => router.replace("./sign-in")}
       >
         <Text style={styles.footerText}>
           Already Have An Account?{" "}
@@ -141,7 +205,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     fontSize: 14,
-    color: "#2c2c2c",
+    color: "#7F7F7F",
   },
   signInText: {
     borderWidth: 1, // Outline border

@@ -45,6 +45,14 @@ export default function RootLayout() {
         name="(tabs)"
         options={{ headerShown: false }}
       ></Stack.Screen>
+      <Stack.Screen
+        name="(auth)/sign-in"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
+      <Stack.Screen
+        name="(auth)/sign-up"
+        options={{ headerShown: false }}
+      ></Stack.Screen>
     </Stack>
   );
 }
