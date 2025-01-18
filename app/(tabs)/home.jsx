@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TabScreen from "../../components/TabScreen";
@@ -9,8 +9,8 @@ const Home = () => {
       <View style={styles.cirle1}>
         <View style={styles.cirle2}></View>
       </View>
-      <View style={styles.container}>
-        <View style={styles.container}>
+      <ScrollView contentContainerStyle={{ height: "100%" }}>
+        <View style={{ marginBottom: 20 }}>
           <Text style={styles.welcomeText}>Welcome Ryan</Text>
 
           <Text style={styles.infoText}>
@@ -22,7 +22,7 @@ const Home = () => {
           </Text>
         </View>
         <TabScreen />
-      </View>
+      </ScrollView>
       <View style={{ flex: 1 }}></View>
     </SafeAreaView>
   );

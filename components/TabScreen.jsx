@@ -1,4 +1,5 @@
 import {
+  Image,
   StyleSheet,
   Text,
   Touchable,
@@ -6,6 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { images } from "../constants";
 
 const TabsLayout = () => {
   return (
@@ -28,21 +30,19 @@ const TabScreen = () => {
     <View
       style={{
         paddingVertical: 20,
-        flex: 1,
         justifyContent: "start",
         alignItems: "center",
         backgroundColor: "#113940",
         borderRadius: 20,
+        padding: 20,
       }}
     >
       <View
         style={{
           flexDirection: "row",
           alignItems: "start",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           width: "100%",
-          marginBottom: 20,
-          paddingHorizontal: 10,
         }}
       >
         {tabMenus.map((menu, index) => (
@@ -70,24 +70,208 @@ const TabScreen = () => {
         ))}
       </View>
       <View
-        style={{ height: 2, backgroundColor: "#277A89", width: "90%" }}
+        style={{
+          height: 2,
+          backgroundColor: "#277A89",
+          width: "100%",
+          marginVertical: 20,
+        }}
       ></View>
       <View
         style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          width: "100%",
           backgroundColor: "#113940",
         }}
       >
         {selectedTab === "Daily Goals" && (
-          <Text style={{ color: "#fff" }}>Daily Goals</Text>
+          <View className="w-100">
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+                width: "100%",
+                marginBottom: 10,
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Practice mindfulness for 5 minutes.
+              </Text>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+                marginBottom: 10,
+                width: "100%",
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Try a guided meditation session.
+              </Text>
+            </View>
+          </View>
         )}
         {selectedTab === "Weakly Goals" && (
-          <Text style={{ color: "#fff" }}>Weakly Goals</Text>
+          <View className="w-100">
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+                width: "100%",
+                marginBottom: 10,
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Practice mindfulness for 5 minutes.
+              </Text>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                marginBottom: 10,
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Try a guided meditation session.
+              </Text>
+            </View>
+          </View>
         )}
         {selectedTab === "Monthly Goals" && (
-          <Text style={{ color: "#fff" }}>Monthly Goals</Text>
+          <View className="w-100">
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+                width: "100%",
+                marginBottom: 10,
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Practice mindfulness for 5 minutes.
+              </Text>
+            </View>
+            <View
+              style={{
+                backgroundColor: "#fff",
+                paddingVertical: 8,
+                paddingHorizontal: 15,
+                borderRadius: 10,
+                flexDirection: "row",
+                justifyContent: "start",
+                alignItems: "center",
+                marginBottom: 10,
+                width: "100%",
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "#87E64C",
+                  borderRadius: 100,
+                  padding: 5,
+                }}
+              >
+                <Image
+                  source={images.meditation}
+                  style={{ width: 40, height: 40 }}
+                ></Image>
+              </View>
+              <Text style={{ color: "#000", marginLeft: 20 }}>
+                Try a guided meditation session.
+              </Text>
+            </View>
+          
+          </View>
         )}
       </View>
     </View>
