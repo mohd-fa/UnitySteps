@@ -1,6 +1,6 @@
 import home from '../assets/images/home.svg';
-import profile from '../assets/images/profile.svg';
-import task from '../assets/images/task.svg';
+import account from '../assets/images/account.svg';
+import goals from '../assets/images/goals.svg';
 import expert from '../assets/images/expert.svg';
 
-export default { home, profile, task, expert };
+export default { home, account, goals, expert };

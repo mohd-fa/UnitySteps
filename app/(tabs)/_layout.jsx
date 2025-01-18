@@ -1,23 +1,17 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import { images } from "../../constants";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View className="flex items-center justify-center gap-2">
+    <View style={styles.bottomBar}>
       <Image
         source={icon}
         resizeMode="contain"
         tintColor={color}
-        className="w-6 h-6"
+        style={{ width: 25, height: 25 }}
       />
-      <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
-        style={{ color: color }}
-      >
-        {name}
-      </Text>
     </View>
   );
 };
@@ -25,7 +19,22 @@ const TabIcon = ({ icon, color, name, focused }) => {
 const TabsLayout = () => {
   return (
     <>
-      <Tabs>
+      <Tabs
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: "#fff",
+            borderTopWidth: 1,
+            height: 60,
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          tabBarLabelStyle: {
+            fontSize: 12,
+          },
+          tabBarActiveTintColor: "#000",
+          tabBarInactiveTintColor: "#909090",
+        }}
+      >
         <Tabs.Screen
           name="home"
           options={{
@@ -35,7 +44,7 @@ const TabsLayout = () => {
               <TabIcon
                 icon={images.home}
                 color={color}
-                name="Account"
+                name="Home"
                 focused={focused}
               />
             ),
@@ -46,6 +55,14 @@ const TabsLayout = () => {
           options={{
             title: "Expert Help",
             headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={images.expert}
+                color={color}
+                name="Expert Help"
+                focused={focused}
+              />
+            ),
           }}
         ></Tabs.Screen>
         <Tabs.Screen
@@ -53,6 +70,14 @@ const TabsLayout = () => {
           options={{
             title: "Goals",
             headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={images.goals}
+                color={color}
+                name="Account"
+                focused={focused}
+              />
+            ),
           }}
         ></Tabs.Screen>
         <Tabs.Screen
@@ -60,11 +85,26 @@ const TabsLayout = () => {
           options={{
             title: "Account",
             headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={images.account}
+                color={color}
+                name="Account"
+                focused={focused}
+              />
+            ),
           }}
         ></Tabs.Screen>
       </Tabs>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  bottomBar: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default TabsLayout;
