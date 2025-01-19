@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 
 import { images } from "../constants";
+
 import { StyleSheet } from "react-native";
 
 const ExpertList = () => {
@@ -48,7 +49,13 @@ const ExpertList = () => {
           </TouchableOpacity>
         ))}
       </View>
-      <ScrollView style={{ padding: 10, gap: 15 }}>
+      <ScrollView
+        style={{
+          flexDirection: "column",
+          padding: 10,
+          gap: 15,
+        }}
+      >
         <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
           <View
             style={{
@@ -57,6 +64,7 @@ const ExpertList = () => {
               borderWidth: 1,
               borderColor: "grey",
               overflow: "hidden",
+              marginBottom: 10,
             }}
           >
             <Image
@@ -91,6 +99,7 @@ const ExpertList = () => {
               borderWidth: 1,
               borderColor: "grey",
               overflow: "hidden",
+              marginBottom: 10,
             }}
           >
             <Image
