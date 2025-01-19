@@ -3,5 +3,5 @@ import account from "../assets/images/account.svg";
 import goals from "../assets/images/goals.svg";
 import expert from "../assets/images/expert.svg";
 import meditation from "../assets/images/meditation.png";
-
-export default { home, account, goals, expert, meditation };
+import leftarrow from "../assets/images/leftArrow.png";
+export default { leftarrow, home, account, goals, expert, meditation };
