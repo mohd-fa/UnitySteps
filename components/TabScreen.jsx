@@ -46,6 +46,7 @@ const TabScreen = () => {
             style={{
               padding: 10,
               borderRadius: 100,
+              marginHorizontal:5,
               backgroundColor:
                 selectedTab === menu.title ? "#87E64C" : "#1A5560",
             }}
