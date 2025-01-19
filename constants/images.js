@@ -7,8 +7,10 @@ import leftarrow from "../assets/images/leftArrow.png";
 import placeholder from "../assets/images/placeholder.jpeg";
 import comment from "../assets/images/comment.png";
 import like from "../assets/images/like.png";
+import gemini from "../assets/images/gemini.webp";
 
 export default {
+  gemini,
   home,
   account,
   goals,

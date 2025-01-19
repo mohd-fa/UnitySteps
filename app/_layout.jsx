@@ -53,6 +53,7 @@ export default function RootLayout() {
         name="(auth)/sign-up"
         options={{ headerShown: false }}
       ></Stack.Screen>
+      <Stack.Screen name="chat" options={{ headerShown: false }}></Stack.Screen>
     </Stack>
   );
 }

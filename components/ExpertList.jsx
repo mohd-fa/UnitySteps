@@ -2,8 +2,8 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 
 import { images } from "../constants";
-
 import { StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 const ExpertList = () => {
   const [selectedTab, setSelectedTab] = React.useState("All");
@@ -57,7 +57,13 @@ const ExpertList = () => {
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
-          <View
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -91,8 +97,14 @@ const ExpertList = () => {
                 Clinical Psycologist, PhD
               </Text>
             </View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -126,7 +138,7 @@ const ExpertList = () => {
                 Clinical Psycologist, PhD
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -135,7 +147,13 @@ const ExpertList = () => {
             gap: 15,
           }}
         >
-          <View
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -168,8 +186,14 @@ const ExpertList = () => {
                 Clinical Psycologist, PhD
               </Text>
             </View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: true },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -179,9 +203,9 @@ const ExpertList = () => {
             }}
           >
             <Image
-              source={images.placeholder}
-              resizeMode="cover"
-              style={{ width: "150%" }}
+              source={images.gemini}
+              resizeMode="contain"
+              style={{ width: "100%" }}
             ></Image>
             <View
               style={{
@@ -197,12 +221,14 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>John Doe</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                Ai Rehab Support
+              </Text>
               <Text style={{ fontSize: 14, fontWeight: "regular" }}>
-                Clinical Psycologist, PhD
+                The Genuine Listener
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>

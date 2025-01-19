@@ -1,5 +1,5 @@
-import { router } from "expo-router";
-import React, { useEffect, useState } from "react";
+import { router, useLocalSearchParams } from "expo-router";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -15,7 +15,8 @@ import {
 } from "react-native";
 import geminiCall from "../lib/genAiCall";
 
-export default function ChatScreen({ }) {
+export default function ChatScreen({}) {
+  const params = useLocalSearchParams();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,6 +29,10 @@ export default function ChatScreen({ }) {
       { role: "user", content: message },
     ]);
     setMessage("");
+    if (params.ai === "false") {
+      setLoading(false);
+      return;
+    }
     try {
       const res = await geminiCall("encourager", message);
       setMessages((prevMessages) => [
@@ -40,10 +45,6 @@ export default function ChatScreen({ }) {
     }
     setLoading(false);
   };
-
-  useEffect(() => {
-    console.log(messages); // Logs updated messages after state changes
-  }, [messages]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -59,7 +60,9 @@ export default function ChatScreen({ }) {
           source={{ uri: "https://avatar.iran.liara.run/public/37" }} // Replace with user avatar URL
           style={styles.avatar}
         />
-        <Text style={styles.userName}>Zyro</Text>
+        <Text style={styles.userName}>
+          {params.ai === "true" ? "AI Rehab Support" : params.name}
+        </Text>
       </View>
 
       {/* Chat Messages */}
