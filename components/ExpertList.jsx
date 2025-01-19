@@ -2,8 +2,8 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
 import { images } from "../constants";
-import { Input } from "@rneui/themed";
 import { StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 const ExpertList = () => {
   const [selectedTab, setSelectedTab] = React.useState("All");
@@ -51,7 +51,13 @@ const ExpertList = () => {
       </View>
       <View style={{ padding: 10, gap: 15 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
-          <View
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -82,8 +88,14 @@ const ExpertList = () => {
               <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
               <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
             </View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -114,7 +126,7 @@ const ExpertList = () => {
               <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
               <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -123,7 +135,13 @@ const ExpertList = () => {
             gap: 15,
           }}
         >
-          <View
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: false, name: "John Doe" },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -154,8 +172,14 @@ const ExpertList = () => {
               <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
               <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
             </View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              router.push({
+                pathname: "/chat",
+                params: { ai: true },
+              })
+            }
             style={{
               flex: 1,
               borderRadius: 20,
@@ -165,9 +189,9 @@ const ExpertList = () => {
             }}
           >
             <Image
-              source={images.placeholder}
-              resizeMode="cover"
-              style={{ width: "150%" }}
+              source={images.gemini}
+              resizeMode="contain"
+              style={{ width: "100%" }}
             ></Image>
             <View
               style={{
@@ -183,10 +207,12 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
-              <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
+              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>
+                Ai Rehab Support
+              </Text>
+              <Text style={{ fontSize: 18 }}>The Genuine Listener</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
