@@ -2,14 +2,6 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { images } from "../constants";
 
-const TabsLayout = () => {
-  return (
-    <View>
-      <Text>TabsLayout</Text>
-    </View>
-  );
-};
-
 const TabScreen = () => {
   const [selectedTab, setSelectedTab] = React.useState("Daily Goals");
 
@@ -36,6 +28,7 @@ const TabScreen = () => {
           alignItems: "start",
           justifyContent: "space-between",
           width: "100%",
+          gap: 4,
         }}
       >
         {tabMenus.map((menu, index) => (
@@ -53,7 +46,7 @@ const TabScreen = () => {
               key={index}
               style={{
                 color: selectedTab === menu.title ? "#000" : "#fff",
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: "bold",
               }}
             >
@@ -104,7 +97,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Practice mindfulness for 5 minutes.
               </Text>
             </View>
@@ -133,7 +126,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Try a guided meditation session.
               </Text>
             </View>
@@ -151,7 +144,7 @@ const TabScreen = () => {
                 style={{
                   color: "#000",
                   fontWeight: "bold",
-                  fontSize: 18,
+                  fontSize: 14,
                   paddingVertical: 5,
                 }}
               >
@@ -188,7 +181,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Practice mindfulness for 5 minutes.
               </Text>
             </View>
@@ -217,7 +210,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Try a guided meditation session.
               </Text>
             </View>
@@ -251,7 +244,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Practice mindfulness for 5 minutes.
               </Text>
             </View>
@@ -280,7 +273,7 @@ const TabScreen = () => {
                   style={{ width: 40, height: 40 }}
                 ></Image>
               </View>
-              <Text style={{ color: "#000", marginLeft: 20 }}>
+              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
                 Try a guided meditation session.
               </Text>
             </View>

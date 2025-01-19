@@ -46,7 +46,7 @@ const DashboardMenu = () => {
               key={index}
               style={{
                 color: selectedTab === menu.title ? "#000" : "#fff",
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: "bold",
               }}
             >
@@ -79,7 +79,7 @@ const DashboardMenu = () => {
               />
               <Text
                 style={{
-                  fontSize: 21,
+                  fontSize: 16,
                   fontWeight: "bold",
                   textAlign: "justify",
                   flex: 1,
@@ -93,14 +93,19 @@ const DashboardMenu = () => {
                 style={{
                   textAlign: "justify",
                   paddingHorizontal: 5,
-                  fontSize: 16,
+                  fontSize: 14,
                 }}
               >
                 {item.content}
               </Text>
             </View>
             <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 5 }}
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 6,
+                height: 50,
+              }}
             >
               <View
                 className="p-1 border"
@@ -111,7 +116,7 @@ const DashboardMenu = () => {
 
                   justifyContent: "center",
                   alignItems: "center",
-                  padding: 10,
+                  padding: 6,
                   marginTop: 10,
                 }}
               >
@@ -119,12 +124,14 @@ const DashboardMenu = () => {
                   resizeMode="contain"
                   source={images.like}
                   style={{
-                    width: 25,
-
+                    width: 15,
+                    height: 15,
                     marginRight: 10,
                   }}
                 />
-                <Text style={{ fontWeight: "bold" }}>{item.likes}</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 12 }}>
+                  {item.likes}
+                </Text>
               </View>
               <View
                 className="p-1 border"
@@ -134,7 +141,7 @@ const DashboardMenu = () => {
                   flexDirection: "row",
                   justifyContent: "center",
                   alignItems: "center",
-                  padding: 10,
+                  padding: 6,
                   marginTop: 10,
                 }}
               >
@@ -142,17 +149,18 @@ const DashboardMenu = () => {
                   source={images.comment}
                   resizeMode="contain"
                   style={{
-                    height: 25,
+                    height: 15,
 
                     marginRight: 10,
                   }}
                 />
-                <Text style={{ fontWeight: "bold" }}>{item.comments}</Text>
+                <Text style={{ fontWeight: "bold", fontSize: 12 }}>
+                  {item.comments}
+                </Text>
               </View>
             </View>
           </View>
         ))}
-        
       </View>
     </View>
   );
