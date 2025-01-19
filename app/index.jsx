@@ -24,7 +24,7 @@ export default function Index() {
         <Text className="font-bold text-3xl">
           Edit apps/index.tsx to edit this screen.
         </Text>
-        <Link href="/sign-up">
+        <Link href="/goals">
           <Text className="text-blue-500">sign-up</Text>
         </Link>
       </View>

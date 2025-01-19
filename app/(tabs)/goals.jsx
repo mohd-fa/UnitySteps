@@ -2,11 +2,12 @@ import {
   View,
   Text,
   SafeAreaView,
-  Touchable,
   TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
+
+import GoalContent from "../../components/GoalContent";
 
 const Goals = () => {
   return (
@@ -158,7 +159,9 @@ const Goals = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View className=" bg-white w-100 flex-1 rounded-t-3xl p-2"></View>
+        <View className=" bg-white w-100 flex-1 rounded-t-3xl p-2">
+          <GoalContent />
+        </View>
       </View>
     </SafeAreaView>
   );
