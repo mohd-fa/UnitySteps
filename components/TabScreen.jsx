@@ -222,6 +222,27 @@ const TabScreen = () => {
                 Try a guided meditation session.
               </Text>
             </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#87E64C",
+                padding: 10,
+                borderRadius: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <Text
+                style={{
+                  color: "#000",
+                  fontWeight: "bold",
+                  fontSize: 14,
+                  paddingVertical: 5,
+                }}
+              >
+                View More
+              </Text>
+            </TouchableOpacity>
           </View>
         )}
         {selectedTab === "Monthly Goals" && (
@@ -285,6 +306,27 @@ const TabScreen = () => {
                 Try a guided meditation session.
               </Text>
             </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#87E64C",
+                padding: 10,
+                borderRadius: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <Text
+                style={{
+                  color: "#000",
+                  fontWeight: "bold",
+                  fontSize: 14,
+                  paddingVertical: 5,
+                }}
+              >
+                View More
+              </Text>
+            </TouchableOpacity>
           </View>
         )}
       </View>

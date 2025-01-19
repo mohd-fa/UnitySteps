@@ -1,15 +1,14 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
 
 import GoalContent from "../../components/GoalContent";
+import { BottomSheet } from "@rneui/themed";
+import { Image } from "react-native";
+import { images } from "@/constants";
 
 const Goals = () => {
+  const [sheetVisibility, setVisibility] = React.useState(false);
   return (
     <SafeAreaView style={styles.page}>
       <View style={styles.cirle1}>
@@ -152,17 +151,121 @@ const Goals = () => {
                 className="font-psemibold"
                 style={{ color: "#000", fontSize: 18 }}
               >
-                {" "}
-                Create a new goal{" "}
+                Create a new goal
                 <Text style={{ fontSize: 22, fontWeight: "bold" }}>+</Text>
               </Text>
             </TouchableOpacity>
           </View>
         </View>
         <View className=" bg-white w-100 flex-1 rounded-t-3xl p-2">
-          <GoalContent />
+          <GoalContent setSheetVisibility={setVisibility} />
         </View>
       </View>
+      <BottomSheet
+        isVisible={sheetVisibility}
+        onBackdropPress={() => setVisibility(false)}
+      >
+        <View
+          style={{
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            backgroundColor: "white",
+            height: "600",
+            padding: 20,
+            paddingTop: 30,
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ alignSelf: "left", marginBottom: 10, fontSize: 16 }}>
+            Monthly / &nbsp;
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Try a guided Meditation session
+            </Text>
+          </Text>
+          <View
+            style={{
+              padding: 10,
+              borderRadius: 100,
+              backgroundColor: "#87E64C",
+              width: "80",
+            }}
+          >
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
+            >
+              Day 100
+            </Text>
+          </View>
+          <View
+            style={{
+              marginVertical: 20,
+              backgroundColor: "#87E64C",
+              borderRadius: 100,
+              padding: 5,
+              width: "150",
+              height: "150",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              source={images.meditation}
+              style={{ height: 100, width: 100 }}
+            ></Image>
+          </View>
+          <Text className="font-pmedium text-center" style={{ fontSize: 16 }}>
+            Try a guided meditaion session
+          </Text>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#87E64C",
+              padding: 10,
+              margin: 10,
+              borderRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              marginTop: 40,
+            }}
+          >
+            <Text
+              style={{
+                color: "#000",
+                fontWeight: "bold",
+                fontSize: 14,
+                paddingVertical: 5,
+              }}
+            >
+              Mark as completed
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#f00",
+              padding: 10,
+              borderRadius: 10,
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                fontSize: 14,
+                paddingVertical: 5,
+              }}
+            >
+              Delete Goal
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </BottomSheet>
     </SafeAreaView>
   );
 };

@@ -10,7 +10,7 @@ import React from "react";
 
 import { images } from "../constants";
 
-const GoalContent = () => {
+const GoalContent = ({ setSheetVisibility }) => {
   const [selectedTab, setSelectedTab] = React.useState("Daily Goals");
 
   const tabMenus = [
@@ -76,111 +76,117 @@ const GoalContent = () => {
               borderRadius: 20,
             }}
           >
-            <View
-              style={{
-                width: 180,
-                height: 200,
-                backgroundColor: "#fff",
-                padding: 20,
-                borderRadius: 20,
-                alignItems: "center",
-                justifyContent: "space-evenly",
-                margin: 10,
-              }}
-            >
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
-                  width: "60",
-                  height: "60",
+                  width: 180,
+                  height: 200,
+                  backgroundColor: "#fff",
+                  padding: 20,
+                  borderRadius: 20,
                   alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "space-evenly",
+                  margin: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ height: 50, width: 50 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                    width: "60",
+                    height: "60",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ height: 50, width: 50 }}
+                  ></Image>
+                </View>
+                <Text
+                  className="font-pmedium text-center"
+                  style={{ fontSize: 16 }}
+                >
+                  Try a guided meditaion session
+                </Text>
               </View>
-              <Text
-                className="font-pmedium text-center"
-                style={{ fontSize: 16 }}
-              >
-                Try a guided meditaion session
-              </Text>
-            </View>
-            <View
-              style={{
-                margin: 10,
-                width: 180,
-                height: 200,
-                backgroundColor: "#fff",
-                padding: 20,
-                borderRadius: 20,
-                alignItems: "center",
-                justifyContent: "space-evenly",
-              }}
-            >
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
-                  width: "60",
-                  height: "60",
+                  margin: 10,
+                  width: 180,
+                  height: 200,
+                  backgroundColor: "#fff",
+                  padding: 20,
+                  borderRadius: 20,
                   alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "space-evenly",
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ height: 50, width: 50 }}
-                ></Image>
-              </View>
-              <Text
-                className="font-pmedium text-center"
-                style={{ fontSize: 16 }}
-              >
-                Try a guided meditaion session
-              </Text>
-            </View>
-            <View
-              style={{
-                width: 180,
-                margin: 10,
-                height: 200,
-                backgroundColor: "#fff",
-                padding: 20,
-                borderRadius: 20,
-                alignItems: "center",
-                justifyContent: "space-evenly",
-              }}
-            >
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                    width: "60",
+                    height: "60",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ height: 50, width: 50 }}
+                  ></Image>
+                </View>
+                <Text
+                  className="font-pmedium text-center"
+                  style={{ fontSize: 16 }}
+                >
+                  Try a guided meditaion session
+                </Text>
+              </View>{" "}
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
-                  width: "60",
-                  height: "60",
+                  width: 180,
+                  margin: 10,
+                  height: 200,
+                  backgroundColor: "#fff",
+                  padding: 20,
+                  borderRadius: 20,
                   alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "space-evenly",
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ height: 50, width: 50 }}
-                ></Image>
-              </View>
-              <Text
-                className="font-pmedium text-center"
-                style={{ fontSize: 16 }}
-              >
-                Try a guided meditaion session
-              </Text>
-            </View>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                    width: "60",
+                    height: "60",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ height: 50, width: 50 }}
+                  ></Image>
+                </View>
+                <Text
+                  className="font-pmedium text-center"
+                  style={{ fontSize: 16 }}
+                >
+                  Try a guided meditaion session
+                </Text>
+              </View>{" "}
+            </TouchableOpacity>
           </ScrollView>
           <Text
             className="font-pbold "
@@ -196,156 +202,166 @@ const GoalContent = () => {
               borderRadius: 20,
             }}
           >
-            <View
-              style={{
-                backgroundColor: "#fff",
-                paddingVertical: 8,
-                paddingHorizontal: 15,
-
-                borderRadius: 10,
-                flexDirection: "row",
-                justifyContent: "start",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            >
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
+                  backgroundColor: "#fff",
+                  paddingVertical: 8,
+                  paddingHorizontal: 15,
+
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  width: "100%",
+                  marginBottom: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ width: 40, height: 40 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ width: 40, height: 40 }}
+                  ></Image>
+                </View>
+                <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
+                  Practice mindfulness for 5 minutes.
+                </Text>
               </View>
-              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
-                Practice mindfulness for 5 minutes.
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: "#fff",
-                paddingVertical: 8,
-                paddingHorizontal: 15,
-
-                borderRadius: 10,
-                flexDirection: "row",
-                justifyContent: "start",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            >
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
+                  backgroundColor: "#fff",
+                  paddingVertical: 8,
+                  paddingHorizontal: 15,
+
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  width: "100%",
+                  marginBottom: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ width: 40, height: 40 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ width: 40, height: 40 }}
+                  ></Image>
+                </View>
+                <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
+                  Practice mindfulness for 5 minutes.
+                </Text>
               </View>
-              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
-                Practice mindfulness for 5 minutes.
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: "#fff",
-                paddingVertical: 8,
-                paddingHorizontal: 15,
-
-                borderRadius: 10,
-                flexDirection: "row",
-                justifyContent: "start",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            >
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
+                  backgroundColor: "#fff",
+                  paddingVertical: 8,
+                  paddingHorizontal: 15,
+
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  width: "100%",
+                  marginBottom: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ width: 40, height: 40 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ width: 40, height: 40 }}
+                  ></Image>
+                </View>
+                <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
+                  Practice mindfulness for 5 minutes.
+                </Text>
               </View>
-              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
-                Practice mindfulness for 5 minutes.
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: "#fff",
-                paddingVertical: 8,
-                paddingHorizontal: 15,
-
-                borderRadius: 10,
-                flexDirection: "row",
-                justifyContent: "start",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            >
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
+                  backgroundColor: "#fff",
+                  paddingVertical: 8,
+                  paddingHorizontal: 15,
+
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  width: "100%",
+                  marginBottom: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ width: 40, height: 40 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ width: 40, height: 40 }}
+                  ></Image>
+                </View>
+                <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
+                  Practice mindfulness for 5 minutes.
+                </Text>
               </View>
-              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
-                Practice mindfulness for 5 minutes.
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: "#fff",
-                paddingVertical: 8,
-                paddingHorizontal: 15,
-
-                borderRadius: 10,
-                flexDirection: "row",
-                justifyContent: "start",
-                alignItems: "center",
-                width: "100%",
-                marginBottom: 10,
-              }}
-            >
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
                 style={{
-                  backgroundColor: "#87E64C",
-                  borderRadius: 100,
-                  padding: 5,
+                  backgroundColor: "#fff",
+                  paddingVertical: 8,
+                  paddingHorizontal: 15,
+
+                  borderRadius: 10,
+                  flexDirection: "row",
+                  justifyContent: "start",
+                  alignItems: "center",
+                  width: "100%",
+                  marginBottom: 10,
                 }}
               >
-                <Image
-                  source={images.meditation}
-                  style={{ width: 40, height: 40 }}
-                ></Image>
+                <View
+                  style={{
+                    backgroundColor: "#87E64C",
+                    borderRadius: 100,
+                    padding: 5,
+                  }}
+                >
+                  <Image
+                    source={images.meditation}
+                    style={{ width: 40, height: 40 }}
+                  ></Image>
+                </View>
+                <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
+                  Practice mindfulness for 5 minutes.
+                </Text>
               </View>
-              <Text style={{ color: "#000", marginLeft: 15, fontSize: 14 }}>
-                Practice mindfulness for 5 minutes.
-              </Text>
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>{" "}
