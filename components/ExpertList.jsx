@@ -1,8 +1,7 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 
 import { images } from "../constants";
-import { Input } from "@rneui/themed";
 import { StyleSheet } from "react-native";
 
 const ExpertList = () => {
@@ -39,7 +38,7 @@ const ExpertList = () => {
               key={index}
               style={{
                 color: selectedTab === menu.title ? "#000" : "#fff",
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: "bold",
                 textAlign: "center",
               }}
@@ -49,7 +48,7 @@ const ExpertList = () => {
           </TouchableOpacity>
         ))}
       </View>
-      <View style={{ padding: 10, gap: 15 }}>
+      <ScrollView style={{ padding: 10, gap: 15 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 15 }}>
           <View
             style={{
@@ -79,8 +78,10 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
-              <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>John Doe</Text>
+              <Text style={{ fontSize: 14, fontWeight: "regular" }}>
+                Clinical Psycologist, PhD
+              </Text>
             </View>
           </View>
           <View
@@ -111,8 +112,10 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
-              <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>John Doe</Text>
+              <Text style={{ fontSize: 14, fontWeight: "regular" }}>
+                Clinical Psycologist, PhD
+              </Text>
             </View>
           </View>
         </View>
@@ -151,8 +154,10 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
-              <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>John Doe</Text>
+              <Text style={{ fontSize: 14, fontWeight: "regular" }}>
+                Clinical Psycologist, PhD
+              </Text>
             </View>
           </View>
           <View
@@ -183,12 +188,14 @@ const ExpertList = () => {
                 padding: 12,
               }}
             >
-              <Text style={{ fontWeight: "Bold", fontSize: 20 }}>John Doe</Text>
-              <Text style={{ fontSize: 18 }}>Clinical Psycologist, PhD</Text>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>John Doe</Text>
+              <Text style={{ fontSize: 14, fontWeight: "regular" }}>
+                Clinical Psycologist, PhD
+              </Text>
             </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
