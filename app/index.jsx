@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
-import { Link, Redirect, router, useRouter } from "expo-router";
+import { NavigationContainer } from "@react-navigation/native";
+import { Link, Redirect, router, Stack, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { SafeAreaView, Text, View } from "react-native";
 
@@ -13,11 +14,12 @@ export default function Index() {
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
     });
-    if (session && session.user) {
-      return <Redirect href={"/home"} />;
-    }
   }, []);
 
+  if (session && session.user) {
+    return <Redirect href={"/home"} />;
+  }
+  return <Redirect href={"(onboarding)"} />;
   return (
     <SafeAreaView>
       <View className=" items-center justify-center">
