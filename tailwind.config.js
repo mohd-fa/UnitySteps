@@ -11,6 +11,7 @@ module.exports = {
         "font-heading": "#323142",
         "font-para": "#7F7F7F",
         "font-highlight": "#ACADB9",
+        'primary-light': "#EDFBE4"
       },
     },
     fontFamily: {

@@ -6,6 +6,7 @@ import GoalContent from "../../components/GoalContent";
 import { BottomSheet } from "@rneui/themed";
 import { Image } from "react-native";
 import { images } from "@/constants";
+import Energy from "@/components/energy";
 
 const Goals = () => {
   const [sheetVisibility, setVisibility] = React.useState(false);
@@ -51,7 +52,7 @@ const Goals = () => {
               <Text
                 style={{
                   color: "#fff",
-                  fontSize: 30,
+                  fontSize: 24,
                   fontWeight: "bold",
                   textAlign: "left",
                   paddingLeft: 10,
@@ -72,12 +73,12 @@ const Goals = () => {
                 style={{
                   backgroundColor: "#87E64C",
                   borderRadius: 50,
-                  paddingHorizontal: 20,
+                  paddingHorizontal: 10,
                   paddingVertical: 2,
                   opacity: 0.5,
                 }}
               >
-                <Text className="font-pmedium" style={{}}>
+                <Text className="font-pmedium" style={{ fontSize: 12 }}>
                   Day 98
                 </Text>
               </View>
@@ -85,12 +86,12 @@ const Goals = () => {
                 style={{
                   backgroundColor: "#87E64C",
                   borderRadius: 50,
-                  paddingHorizontal: 20,
+                  paddingHorizontal: 10,
                   paddingVertical: 2,
                   opacity: 0.75,
                 }}
               >
-                <Text className="font-pmedium" style={{}}>
+                <Text className="font-pmedium" style={{ fontSize: 12 }}>
                   Day 99
                 </Text>
               </View>
@@ -98,11 +99,11 @@ const Goals = () => {
                 style={{
                   backgroundColor: "#87E64C",
                   borderRadius: 50,
-                  paddingHorizontal: 20,
+                  paddingHorizontal: 10,
                   paddingVertical: 2,
                 }}
               >
-                <Text className="font-pmedium" style={{ fontSize: 18 }}>
+                <Text className="font-pmedium" style={{ fontSize: 12 }}>
                   Day 100
                 </Text>
               </View>
@@ -110,11 +111,11 @@ const Goals = () => {
                 style={{
                   backgroundColor: "#c0c0c0",
                   borderRadius: 50,
-                  paddingHorizontal: 20,
+                  paddingHorizontal: 10,
                   paddingVertical: 2,
                 }}
               >
-                <Text className="font-pmedium" style={{}}>
+                <Text className="font-pmedium" style={{ fontSize: 12 }}>
                   Day 101
                 </Text>
               </View>
@@ -122,11 +123,11 @@ const Goals = () => {
                 style={{
                   backgroundColor: "grey",
                   borderRadius: 50,
-                  paddingHorizontal: 20,
+                  paddingHorizontal: 10,
                   paddingVertical: 2,
                 }}
               >
-                <Text className="font-pmedium" style={{}}>
+                <Text className="font-pmedium" style={{ fontSize: 12 }}>
                   Day 102
                 </Text>
               </View>
@@ -152,7 +153,9 @@ const Goals = () => {
                 style={{ color: "#000", fontSize: 18 }}
               >
                 Create a new goal
-                <Text style={{ fontSize: 22, fontWeight: "bold" }}>+</Text>
+                <Text style={{ fontSize: 16, fontWeight: "bold", padding: 5 }}>
+                  +
+                </Text>
               </Text>
             </TouchableOpacity>
           </View>
@@ -187,13 +190,13 @@ const Goals = () => {
               padding: 10,
               borderRadius: 100,
               backgroundColor: "#87E64C",
-              width: "80",
+              // width: "80",
             }}
           >
             <Text
               style={{
                 color: "#000",
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: "bold",
               }}
             >
@@ -220,6 +223,7 @@ const Goals = () => {
           <Text className="font-pmedium text-center" style={{ fontSize: 16 }}>
             Try a guided meditaion session
           </Text>
+          <Energy />
           <TouchableOpacity
             style={{
               backgroundColor: "#87E64C",

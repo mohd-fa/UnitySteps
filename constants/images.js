@@ -8,8 +8,10 @@ import placeholder from "../assets/images/placeholder.jpeg";
 import comment from "../assets/images/comment.png";
 import like from "../assets/images/like.png";
 import gemini from "../assets/images/gemini.webp";
+import energy from "../assets/images/energy.png";
 
 export default {
+  energy,
   gemini,
   home,
   account,

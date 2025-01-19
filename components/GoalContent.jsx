@@ -55,7 +55,7 @@ const GoalContent = ({ setSheetVisibility }) => {
               key={index}
               style={{
                 color: selectedTab === menu.title ? "#000" : "#fff",
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: "bold",
               }}
             >
