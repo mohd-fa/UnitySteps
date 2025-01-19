@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TabScreen from "../../components/TabScreen";
@@ -6,15 +6,15 @@ import DashboardMenu from "../../components/DashboardMenu";
 
 const Home = () => {
   return (
-    <SafeAreaView style={styles.page}>
-      <View style={styles.cirle1}>
-        <View style={styles.cirle2}></View>
-      </View>
-      <View style={styles.cirle3}>
-        <View style={styles.cirle4}></View>
-      </View>
+    <ScrollView style={{ backgroundColor: "#174952" }}>
+      <SafeAreaView style={styles.page}>
+        <View style={styles.cirle1}>
+          <View style={styles.cirle2}></View>
+        </View>
+        <View style={styles.cirle3}>
+          <View style={styles.cirle4}></View>
+        </View>
 
-      <ScrollView>
         <View style={{ padding: 20 }}>
           <View style={{ marginBottom: 20 }}>
             <Text style={styles.welcomeText}>Welcome Ryan</Text>
@@ -32,8 +32,9 @@ const Home = () => {
         <View className="bg-white w-100 flex-1 rounded-t-3xl p-2">
           <DashboardMenu />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        <View style={{ backgroundColor: "#fff", height: 50 }}> </View>
+      </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -72,10 +73,8 @@ const styles = StyleSheet.create({
     top: 20,
     left: 20,
   },
-  page: { flex: 1, backgroundColor: "#174952" },
-  container: {
-    flex: 1,
-  },
+  page: { backgroundColor: "#174952" },
+
   primaryText: {
     color: "#87E64C",
   },
@@ -94,9 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#D6D6D6",
   },
-  container: {
-    flex: 1,
-  },
+
   goalsContainer: {
     backgroundColor: "#113940",
     height: 200,

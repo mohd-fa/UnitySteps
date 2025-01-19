@@ -29,7 +29,7 @@ const DashboardMenu = () => {
     },
   ];
   return (
-    <View>
+    <View style={{ backgroundColor: "#fff" }}>
       <View style={{ flexDirection: "row", padding: 10, gap: 10 }}>
         {tabMenus.map((menu, index) => (
           <TouchableOpacity
@@ -59,6 +59,7 @@ const DashboardMenu = () => {
       <View style={{ flex: 1, marginTop: 5, margin: 10, gap: 10 }}>
         {articles.map((item, index) => (
           <View
+            key={index}
             style={{
               borderWidth: 1,
               borderRadius: 10,
@@ -81,6 +82,7 @@ const DashboardMenu = () => {
                   fontSize: 21,
                   fontWeight: "bold",
                   textAlign: "justify",
+                  flex: 1,
                 }}
               >
                 {item.title}
@@ -150,6 +152,7 @@ const DashboardMenu = () => {
             </View>
           </View>
         ))}
+        
       </View>
     </View>
   );
