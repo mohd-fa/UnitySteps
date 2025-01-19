@@ -60,7 +60,7 @@ const userSubstance = () => {
                     {key === "Tobacco" && "Tobacco/Nicotine"}
                     {key === "Cannabis" && (
                       <>
-                        Cannabis{" "}
+                        Cannabis
                         <Text className="text-xs text-gray-500">
                           (Marijuana)
                         </Text>
@@ -68,7 +68,7 @@ const userSubstance = () => {
                     )}
                     {key === "PrescriptionDrugs" && (
                       <>
-                        Prescription Drugs{" "}
+                        Prescription Drugs
                         <Text className="text-xs">
                           (e.g., opioids, benzodiazepines)
                         </Text>
@@ -76,7 +76,7 @@ const userSubstance = () => {
                     )}
                     {key === "IllicitDrugs" && (
                       <>
-                        Illicit Drugs{" "}
+                        Illicit Drugs
                         <Text className="text-xs">
                           (e.g., cocaine, heroin, methamphetamine)
                         </Text>

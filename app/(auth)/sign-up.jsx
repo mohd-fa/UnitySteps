@@ -136,7 +136,7 @@ const RegisterScreen = () => {
         onPress={() => router.replace("./sign-in")}
       >
         <Text style={styles.footerText}>
-          Already Have An Account?{" "}
+          Already Have An Account?
           <Text style={styles.signInText}>Sign In</Text>
         </Text>
       </TouchableOpacity>

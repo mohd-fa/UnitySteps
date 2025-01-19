@@ -148,7 +148,7 @@ const GoalContent = ({ setSheetVisibility }) => {
                 >
                   Try a guided meditaion session
                 </Text>
-              </View>{" "}
+              </View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setSheetVisibility(true)}>
               <View
@@ -185,7 +185,7 @@ const GoalContent = ({ setSheetVisibility }) => {
                 >
                   Try a guided meditaion session
                 </Text>
-              </View>{" "}
+              </View>
             </TouchableOpacity>
           </ScrollView>
           <Text
@@ -364,7 +364,7 @@ const GoalContent = ({ setSheetVisibility }) => {
             </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>{" "}
+      </ScrollView>
     </View>
   );
 };
