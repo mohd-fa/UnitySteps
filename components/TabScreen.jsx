@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { images } from "../constants";
 
@@ -22,13 +29,14 @@ const TabScreen = () => {
         padding: 20,
       }}
     >
-      <View
+      <ScrollView
+        horizontal={true}
         style={{
           flexDirection: "row",
-          alignItems: "start",
-          justifyContent: "space-between",
+          // alignItems: "start",
+          // justifyContent: "space-between",
           width: "100%",
-          gap: 4,
+          gap: 10,
         }}
       >
         {tabMenus.map((menu, index) => (
@@ -54,7 +62,7 @@ const TabScreen = () => {
             </Text>
           </TouchableOpacity>
         ))}
-      </View>
+      </ScrollView>
       <View
         style={{
           height: 2,
